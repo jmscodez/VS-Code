@@ -3,33 +3,35 @@ import sys
 from typing import LiteralString
 
 
-def poker():
-    # Define the card values and suits
-    values = ["two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king", "ace"]
-    suits = ["hearts", "diamonds", "clubs", "spades"]
 
-    Game_Played = 0
+# Define the card values and suits
+values = ["two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king", "ace"]
+suits = ["hearts", "diamonds", "clubs", "spades"]
 
-    # Create a dictionary
-    cards = {}
+Game_Played = 0
 
-    # Generate the card variables
-    for value in values:
-        for suit in suits:
-            number_suit = f"{value}_{suit}"
-            cards[number_suit] = f"{value.capitalize()} of {suit.capitalize()}"
+# Create a dictionary
+cards = {}
 
-    #Dealt Cards
-    Dealt_One = ""
-    Dealt_Two = ""
+# Generate the card variables
+for value in values:
+    for suit in suits:
+        number_suit = f"{value}_{suit}"
+        cards[number_suit] = f"{value.capitalize()} of {suit.capitalize()}"
 
-    #Table Cards
-    Card_One = ""
-    Card_Two = ""
-    Card_Three = ""
-    Card_Four = ""
-    Card_Five = ""
+#Dealt Cards
+Dealt_One = ""
+Dealt_Two = ""
 
+#Table Cards
+Card_One = ""
+Card_Two = ""
+Card_Three = ""
+Card_Four = ""
+Card_Five = ""
+
+
+def run():
     #Deal Hand 
     def card_deal():
         global Dealt_One
@@ -53,6 +55,7 @@ def poker():
     card_deal()
 
     #add a game played counter
+    global Game_Played
     Game_Played += 1
 
     #flop
@@ -151,7 +154,7 @@ def poker():
         
     River()
 
-    
+
     #------------------------------------------------------------------
 
     # Extract the number from the card variable and convert it to an integer
@@ -182,7 +185,7 @@ def poker():
         "ace": 14
     }
 
-    
+
     #convert each number from text to the interger by referncing number_words dictionary. So if number1 is "two", number1 will be 2. do this for number1 to number7. Then print just number1
     number1 = number_words[number1.lower()]
     number2 = number_words[number2.lower()]
@@ -270,13 +273,9 @@ def poker():
     print('Games Played: ' + str(Game_Played))
     print('----------------------------')
 
-poker()
-
-
-
-
-
-
-
+    playAgain = input("wanna play again?")
+    if playAgain.upper() == "Y":
+        run()
     #sort code only values
     #check 
+run()
