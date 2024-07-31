@@ -1,0 +1,14 @@
+{
+    "editor.defaultFoldingRangeProvider": null,
+    "terminal.integrated.commandsToSkipShell": [
+        "{   \"python.formatting.provider\": \"autopep8\",   \"editor.formatOnSave\": true,   \"python.formatting.autopep8Args\": [\"--max-line-length=79\"] }"
+    ],
+    "json.format.keepLines": true,
+    "python.analysis.inlayHints.functionReturnTypes": false,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.autoFormatStrings": true,
+    "notebook.defaultFormatter": "vscode.json-language-features",
+    "editor.defaultFormatter": null,
+    "python.REPL.enableREPLSmartSend": false
+}
